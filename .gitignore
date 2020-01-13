@@ -1,3 +1,5 @@
 /.env
 /venvWin32/
 /venvWin/
+/venv/
+/venv3.7/
