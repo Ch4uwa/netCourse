@@ -1,3 +1,2 @@
 /.env
-/venvWin32/
-/venvWin/
+/venv*/
