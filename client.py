@@ -134,7 +134,6 @@ def main():
 
             if event.type == pygame.MOUSEBUTTONDOWN:
                 pos = pygame.mouse.get_pos()
-                print(pos)
                 for btn in btns:
                     if btn.click(pos) and game.connected():
                         if player == 0:
