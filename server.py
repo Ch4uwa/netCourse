@@ -2,9 +2,13 @@ import socket
 from _thread import *
 import pickle
 from game import Game
+from dotenv import load_dotenv
+load_dotenv()
+import os
 
-server = "192.168.1.214"
-port = 5555
+
+server = os.getenv('SERVERIP')
+port = os.getenv('PORT')
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
