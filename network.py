@@ -1,15 +1,12 @@
 import socket
 import pickle
-from dotenv import load_dotenv
-load_dotenv()
-import os
 
 
 class Network:
     def __init__(self):
         self.client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        self.server = os.getenv('SERVERIP')
-        self.port = os.getenv('PORT')
+        self.server = "172.104.234.95"
+        self.port = 5555
         self.addr = (self.server, self.port)
         self.p = self.connect()
 
@@ -26,7 +23,6 @@ class Network:
     def send(self, data):
         try:
             self.client.send(str.encode(data))
-            return pickle.loads(self.client.recv(2048*2))
+            return pickle.loads(self.client.recv(2048 * 2))
         except socket.error as e:
             print(e)
-
