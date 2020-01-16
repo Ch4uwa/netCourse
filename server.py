@@ -2,9 +2,11 @@ import socket
 from _thread import *
 import pickle
 from game import Game
+import information
+from dbmain import DbStuff
 
-server = "172.104.234.95"
-port = 5555
+server = information.SERVERIP
+port = information.PORT
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
@@ -59,6 +61,11 @@ def threaded_client(conn, p, gameId):
 while True:
     conn, addr = s.accept()
     print("Connected to:", addr)
+    if addr != "":
+        a = addr[0]
+        print(a)
+        d = DbStuff()
+        d.connect_db(a)
 
     idCount += 1
     p = 0

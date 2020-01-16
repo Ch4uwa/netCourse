@@ -94,6 +94,7 @@ def main():
     n = Network()
     player = int(n.get_p())
     print("You are player ", player)
+    pygame.display.set_caption("Player " + str(player))
 
     while run:
         clock.tick(60)
